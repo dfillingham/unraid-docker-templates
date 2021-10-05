@@ -9,18 +9,18 @@
   <Privileged>false</Privileged>
   <Support/>
   <Project/>
-  <Overview>Simple postgres container. Uses the 'arbitrary user' functionality to run as nobody:users, rather than root:root.</Overview>
+  <Overview>Simple postgres container.</Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI/>
   <TemplateURL/>
   <Icon>https://d1q6f0aelx0por.cloudfront.net/product-logos/library-postgres-logo.png</Icon>
-  <ExtraParams>--user "$(id -u nobody):$(id -g users)"</ExtraParams>
+  <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1633398591</DateInstalled>
+  <DateInstalled>1633398699</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>Simple postgres container. Uses the 'arbitrary user' functionality to run as nobody:users, rather than root:root.</Description>
+  <Description>Simple postgres container.</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish/>
@@ -30,16 +30,6 @@
       <HostDir>/mnt/user/appdata/postgres/</HostDir>
       <ContainerDir>/var/lib/postgresql/</ContainerDir>
       <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/etc/group</HostDir>
-      <ContainerDir>/etc/group</ContainerDir>
-      <Mode>ro</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/etc/passwd</HostDir>
-      <ContainerDir>/etc/passwd</ContainerDir>
-      <Mode>ro</Mode>
     </Volume>
   </Data>
   <Environment>
@@ -52,6 +42,4 @@
   <Labels/>
   <Config Name="Initial postgres password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="The initial password given to the postgres user within the database when first created. Has no effect after this." Type="Variable" Display="always" Required="true" Mask="true"/>
   <Config Name="Database file location" Target="/var/lib/postgresql/" Default="/mnt/user/appdata/postgres/" Mode="rw" Description="The directory where the actual database files will be stored." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/postgres/</Config>
-  <Config Name="group" Target="/etc/group" Default="/etc/group" Mode="ro" Description="Container Path: /etc/group" Type="Path" Display="advanced-hide" Required="true" Mask="false">/etc/group</Config>
-  <Config Name="passwd" Target="/etc/passwd" Default="/etc/passwd" Mode="ro" Description="Container Path: /etc/passwd" Type="Path" Display="advanced-hide" Required="true" Mask="false">/etc/passwd</Config>
 </Container>
